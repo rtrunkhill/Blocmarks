@@ -21,6 +21,7 @@ gem 'turbolinks'
 gem 'bootstrap'
 gem 'figaro'
 gem 'bcrypt'
+gem 'devise'
 
 group :development, :test do
     gem 'byebug'
