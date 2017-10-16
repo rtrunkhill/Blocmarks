@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  before_action :require_sign_in
+  # before_action :require_sign_in
   
   def index
     @topics = Topic.all
@@ -14,7 +14,8 @@ class TopicsController < ApplicationController
   end
   
   def create
-    @topic = Topic.new(topic_params)
+    @topic = Topic.new
+    @topic.title = params[:topic][:title]
     
     if @topic.save
       redirect_to @topic, notice: "Topic was saved successfully."
@@ -31,7 +32,6 @@ class TopicsController < ApplicationController
   def update
     @topic = Topic.find(params[:id])
     
-    @topic.assign_attributes(topic_params)
     
     if @topic.save
       flash[:notice] = "Topic was updated."
@@ -46,7 +46,7 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     
     if @topic.destroy
-      flash[:notice] = "\"#{@topic.name}\" was deleted successfully."
+      flash[:notice] = "\"#{@topic.title}\" was deleted successfully."
       redirect_to action: :index
     else
       flash.now[:alert] = "There was an error deleting the topic."
