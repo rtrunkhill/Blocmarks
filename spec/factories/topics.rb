@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :topic do
-    title Faker::Simpsons.character
+    fake_title = Faker::Simpsons.character
+    title "#{fake_title}"
   end
 end

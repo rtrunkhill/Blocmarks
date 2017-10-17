@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe TopicsController, type: :controller do
-  let(:my_topic) { create(:topic) } 
+  let(:my_topic) { create(:topic) }
+  let(:user) {create(:user) }
   
   describe "GET #index" do
     it "returns http success" do

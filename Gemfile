@@ -20,7 +20,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap'
 gem 'figaro'
-gem 'devise'
+gem 'devise', '4.1.0'
 
 group :development, :test do
     gem 'byebug'

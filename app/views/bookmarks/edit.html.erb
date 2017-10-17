@@ -1,2 +1,9 @@
-<h1>Bookmarks#edit</h1>
-<p>Find me in app/views/bookmarks/edit.html.erb</p>
+<h1>Let's fix this bookmark</h1>
+ <%= form_for [@topic, @bookmark] do |f| %>
+   <div class="form-group">
+     <!--%= f.label :url, class: 'sr-only' %>-->
+     <!--<br>-->
+     <%= f.text_field :url, class: 'form-control', placeholder: "what was the bookmark supposed to say?" %>
+   </div>
+   <%= f.submit "Submit URL", class: 'btn btn-default pull-right' %>
+ <% end %>
