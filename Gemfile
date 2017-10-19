@@ -11,6 +11,8 @@ end
 group :development do
     gem 'sqlite3'
     gem 'web-console', '~> 2.0'
+    gem 'faker'
+
 end
 
 gem 'sass-rails', '~> 5.0'
@@ -22,12 +24,12 @@ gem 'bootstrap'
 gem 'figaro'
 gem 'devise', '4.1.0'
 
+
 group :development, :test do
     gem 'byebug'
     gem 'spring'
     gem 'rspec-rails'
     gem 'shoulda'
-    gem 'faker'
     gem 'factory_girl_rails', '~> 4.0'
     gem 'pry-rails'
 end
