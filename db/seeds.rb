@@ -1,10 +1,10 @@
 
-5.times do
-    User.create!(
-        email: Faker::Internet.email,
-        password: Faker::Internet.password
-    )
-end
+# 5.times do
+#     User.create!(
+#         email: Faker::Internet.email,
+#         password: Faker::Internet.password
+#     )
+# end
 
 10.times do
     Topic.create!(
@@ -21,6 +21,6 @@ topics = Topic.all
 end
 
 puts "Seed finished"
-puts "#{User.count} users created"
+# puts "#{User.count} users created"
 puts "#{Topic.count} Topics created"
 puts "#{Bookmark.count} Bookmarks created"

@@ -5,4 +5,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   has_many :topics
+  
+  after_create :send_admin_mail
+  
+  def send_admin_mail
+    FavoriteMailer.new_user(self).deliver
+  end
+
 end

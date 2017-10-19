@@ -3,9 +3,9 @@ class FavoriteMailer < ApplicationMailer
     
     def new_user(user)
     
-        headers["Message-ID"] = "#{user.email} @Blockmarks>"
-        headers["In-Reply-To"] = "#{user.email} @Blockmarks>"
-        headers["References"] = "#{user.email} @Blockmarks>"
+        headers["Message-ID"] = "#{user.email}"
+        headers["In-Reply-To"] = "#{user.email}"
+        headers["References"] = "#{user.email}"
         
         @user = user
 
