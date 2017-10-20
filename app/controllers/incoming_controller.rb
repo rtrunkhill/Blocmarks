@@ -19,10 +19,10 @@ class IncomingController < ApplicationController
     temp_bm = (params["body-plain"])
     
     # Check if user is nil, if so, create and save a new user
-    @user.nil? ? @user = User.new : @user = User
+    @user.nil? ? (@user = User.new) : (@user = User)
     
     # Check if the topic is nil, if so, create and save a new topic
-    @topic.nil? ? @topic = Topic.new : @topic = Topic
+    @topic.nil? ? (@topic = Topic.new) : (@topic = Topic)
     # Now that you're sure you have a valid user and topic, build and save a new bookmark
     temp_bm = Bookmark.new(@topic)
     #not sure about that syntax
