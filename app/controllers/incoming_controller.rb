@@ -33,7 +33,10 @@ class IncomingController < ApplicationController
       @topic.save!
     end
     # Now that you're sure you have a valid user and topic, build and save a new bookmark
-    # temp_bm = Bookmark.new(@topic)
+    @bookmark = Bookmark.new
+    @bookmark.topic = @topic
+    @bookmark.url = @url
+    @bookmark.save!
     #not sure about that syntax
     
     # Assuming all went well.
