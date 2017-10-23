@@ -18,7 +18,7 @@ class IncomingController < ApplicationController
 
     
     # Find the topic by using params[:subject]
-    @topic = Topic.find(title: params[:subject])
+    @topic = Topic.find_by title: (params[:subject])
     # Assign the url to a variable after retreiving it from params["body-plain"]
     @url = params["body-plain"]
 
