@@ -22,11 +22,6 @@ class IncomingController < ApplicationController
     # Assign the url to a variable after retreiving it from params["body-plain"]
     @url = params["body-plain"]
 
-    puts "*******************************************************************************************"
-    puts "user =  #{@user}"
-    puts "topic = #{@topic}"
-    puts "url = #{@url}"
-    puts "*******************************************************************************************"
 
     # Check if user is nil, if so, create and save a new user
     if @user.nil? 
@@ -49,6 +44,12 @@ class IncomingController < ApplicationController
     @bookmark.url = @url
     @bookmark.save!
     #not sure about that syntax
+    puts "*******************************************************************************************"
+    puts "user =  #{@user}"
+    puts "topic = #{@topic}"
+    puts "url = #{@url}"
+    puts "*******************************************************************************************"
+
     
     # Assuming all went well.
     head 200
