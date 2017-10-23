@@ -23,6 +23,7 @@ gem 'turbolinks'
 gem 'bootstrap'
 gem 'figaro'
 gem 'devise', '4.1.0'
+gem 'pundit'
 
 
 group :development, :test do

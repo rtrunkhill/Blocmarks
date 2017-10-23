@@ -1,4 +1,6 @@
 class BookmarksController < ApplicationController
+  # before_action :authorize_user, except: [:index, :show]
+  
   def show
      @bookmark = Bookmark.find(params[:id])
   end
@@ -13,6 +15,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new
     @bookmark.url = params[:bookmark][:url]
     @bookmark.topic = @topic
+    @bookmark.user_id = current_user.id
     
     if @bookmark.save
       redirect_to @topic, notice: "Bookmark was saved successfully."
