@@ -13,7 +13,7 @@ class IncomingController < ApplicationController
     # magic here.
     # Find the user by using params[:sender]
     puts "*******************************************************************************************"
-    @user = User.find_by(email => params[:sender])
+    @user = User.find_by email: (params[:sender])
         puts "*******************************************************************************************"
 
     
