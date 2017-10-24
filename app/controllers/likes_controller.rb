@@ -14,7 +14,7 @@ class LikesController < ApplicationController
     
     if like.save
     # Add code to generate a success flash and redirect to @bookmark
-      flash[:notice] = "you LOVE this bookmark!"
+      flash[:notice] = "you LOVE #{@bookmark.url}!"
       redirect_to @bookmark.topic
     else
     # Add code to generate a failure flash and redirect to @bookmark
@@ -33,7 +33,7 @@ class LikesController < ApplicationController
     authorize like
     
     if like.destroy
-      flash[:notice] = "We never liked \"#{@bookmark.url}\" either."
+      flash[:notice] = "We never liked #{@bookmark.url} either."
       redirect_to @bookmark.topic
     else
     # Flash error and redirect to @bookmark

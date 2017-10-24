@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'users/show'
+
   get 'likes/index'
 
   # get 'incoming/create'
@@ -14,6 +16,9 @@ Rails.application.routes.draw do
     end
 
   devise_for :users, controllers: { :sessionsm => 'users/sessions' }
+  
+  resources :users, only: [:show]
+  
   get 'users/signout', to: 'devise/sessions#destroy'
   
   get 'about' => 'welcome#about'
