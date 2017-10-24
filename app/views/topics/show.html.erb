@@ -9,6 +9,9 @@
     <div class='col-md-8'>
          <% @topic.bookmarks.each do |bookmark| %>
          <li><%= link_to bookmark.url, topic_bookmark_path(@topic, bookmark) %> </li>
+            <div class="button_placement">
+                <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
+            </div>
          <% end %>
     </div>
 </div>
