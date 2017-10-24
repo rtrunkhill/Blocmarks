@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   post :incoming, to: 'incoming#create'
 
   resources :topics do
-    resources :bookmarks, except: [:index] do
+    resources :bookmarks
+  end
+  
+   resources :bookmarks, except: [:index] do
      resources :likes, only: [:index, :create, :destroy]
     end
-  end
 
   devise_for :users, controllers: { :sessionsm => 'users/sessions' }
   get 'users/signout', to: 'devise/sessions#destroy'
