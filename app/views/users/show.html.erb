@@ -1,4 +1,4 @@
- <div class="row">
+ <div class="col-md-4">
    <h2>Your Blocmarks:</h2>
      <div class="col-md-8">
        <% @user_bookmarks.each do |bookmark| %>
@@ -12,15 +12,15 @@
      </div>
  </div>
  
-  <div class="row">
-   <h2>What you like from other people:</h2>
-     <div class="col-md-8">
-       <% @liked_bookmarks.each do |bookmark| %>
-           <h4 class="media-heading">
-             <%="#{like.bookmark.url}" %>
-             <br>
-             <br>
-           </h4>
-       <% end %>
-     </div>
- </div>
+ <!-- <div class="row">-->
+ <!--  <h2>What you like from other people:</h2>-->
+ <!--    <div class="col-md-8">-->
+ <!--      % @liked_bookmarks.each do |bookmark| %>-->
+ <!--          <h4 class="media-heading">-->
+ <!--            %="#{like.bookmark.url}" %>-->
+ <!--            <br>-->
+ <!--            <br>-->
+ <!--          </h4>-->
+ <!--      % end %>-->
+ <!--    </div>-->
+ <!--</div>-->
