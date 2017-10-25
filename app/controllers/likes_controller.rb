@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  
+  include Pundit
   after_filter :verify_authorized
   
   def index

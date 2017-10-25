@@ -11,9 +11,9 @@ Rails.application.routes.draw do
     resources :bookmarks
   end
   
-   resources :bookmarks, except: [:index] do
-     resources :likes, only: [:index, :create, :destroy]
-    end
+ resources :bookmarks, except: [:index] do
+   resources :likes, only: [:index, :create, :destroy]
+  end
 
   devise_for :users, controllers: { :sessionsm => 'users/sessions' }
   
