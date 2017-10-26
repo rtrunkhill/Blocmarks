@@ -14,9 +14,10 @@ ________________________________________________________________________________
      <div class="col-md-6, text-center">
        <% @liked_bookmarks.each do |like| %>
          <p>
-           <li><%="#{like.bookmark.url}" %> <%= link_to "Unlike", topic_bookmark_path(bookmark_url, like), method: :get, class: 'btn btn-xs btn-danger' %></li> 
+           <li><%="#{like.bookmark.url}" %>  <%= link_to "Unlike", bookmark_like_path(like.bookmark.id, like.id), method: :delete, class: 'btn btn-xs btn-danger' %></li>
            <br>
            <% end %>
+
            <br>
          </p>
       </div>
